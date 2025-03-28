@@ -62,13 +62,13 @@ return {
                             ["<C-p>"] = "actions.preview",
                             ["<C-c>"] = { "actions.close", mode = "n" },
                             ["<C-r>"] = "actions.refresh",
-                            ["<C-z>"] = { "actions.parent", mode = "n" },
+                            ["<BS>"] = { "actions.parent", mode = "n" },
                         },
                     -- Set to false to disable all of the above keymaps
                         use_default_keymaps = true,
                     view_options = {
                         -- Show files and directories that start with "."
-                            show_hidden = false,
+                            show_hidden = true,
                         -- This function defines what is considered a "hidden" file
                             is_hidden_file = function(name, bufnr)
                             local m = name:match("^%.")

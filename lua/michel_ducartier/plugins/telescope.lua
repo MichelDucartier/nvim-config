@@ -5,7 +5,13 @@ return {
         "nvim-lua/plenary.nvim"
     },
     config = function()
-        require('telescope').setup({})
+        require('telescope').setup({
+            pickers = {
+                find_files = {
+                    hidden = true
+                }
+            }
+        })
 
         local builtin = require('telescope.builtin')
         vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
