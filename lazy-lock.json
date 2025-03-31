@@ -22,5 +22,6 @@
   "render-markdown.nvim": { "branch": "main", "commit": "4964586a0c58127aef1fba8336520fe042255353" },
   "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
   "tiny-code-action.nvim": { "branch": "main", "commit": "cc2f6045e67e01355c49fea10568baba856e844a" },
+  "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "0a3be9835c6044e8bbc1bdf001e3333519a2bad9" },
   "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" }
 }

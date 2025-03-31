@@ -13,3 +13,6 @@ vim.keymap.set("n", "<C-J>", "<PageDown>", { desc = "PageDown" })
 vim.keymap.set("n", "<leader>ca", function()
     require("tiny-code-action").code_action()
 end, { noremap = true, silent = true, desc = "Code action" })
+
+-- Show diagnostics
+-- vim.keymap.set("n", "<C-S>", vim.diagnostic.open_float)
