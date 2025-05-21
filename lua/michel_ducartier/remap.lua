@@ -11,8 +11,12 @@ vim.keymap.set("n", "<C-J>", "<PageDown>", { desc = "PageDown" })
 
 -- Code actions
 vim.keymap.set("n", "<leader>ca", function()
-    require("tiny-code-action").code_action()
+  require("tiny-code-action").code_action()
 end, { noremap = true, silent = true, desc = "Code action" })
+
+-- Find references
+vim.keymap.set('n', '<leader>fu', ':lua require("telescope.builtin").lsp_references()<CR>',
+  { noremap = true, silent = true })
 
 -- Show diagnostics
 -- vim.keymap.set("n", "<C-S>", vim.diagnostic.open_float)
