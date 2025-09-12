@@ -1,5 +1,6 @@
 return {
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    { "catppuccin/nvim",                 name = "catppuccin", priority = 1000 },
     { 'nvim-treesitter/nvim-treesitter', build = ":TSUpdate" },
-    { "sindrets/diffview.nvim" },
+    { 'akinsho/git-conflict.nvim',       version = "*",       config = true },
+    { 'github/copilot.vim' }
 }

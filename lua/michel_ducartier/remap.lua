@@ -14,5 +14,12 @@ vim.keymap.set("n", "<leader>ca", function()
     require("tiny-code-action").code_action()
 end, { noremap = true, silent = true, desc = "Code action" })
 
+-- Show references
+vim.keymap.set("n", "<leader>fu", function()
+    telescope.builtin.lsp.references()
+end, { noremap = true, silent = true, desc = "Show references" })
+
+
+
 -- Show diagnostics
 -- vim.keymap.set("n", "<C-S>", vim.diagnostic.open_float)
