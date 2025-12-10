@@ -1,6 +1,8 @@
 -- Initialize vim shortcuts
 vim.g.mapleader = " "
 
+vim.g.maplocalleader = ","
+
 -- Set move line up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move up" })

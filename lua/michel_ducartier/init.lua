@@ -17,3 +17,6 @@ vim.cmd 'colorscheme catppuccin-frappe'
 
 -- Disable Copilot by default
 vim.g.copilot_enabled = false
+
+-- Vimtex
+vim.g.vimtex_compiler_method = 'latexmk'
