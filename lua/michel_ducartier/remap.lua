@@ -1,6 +1,5 @@
 -- Initialize vim shortcuts
 vim.g.mapleader = " "
-
 vim.g.maplocalleader = ","
 
 -- Set move line up and down

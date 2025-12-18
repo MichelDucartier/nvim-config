@@ -1,5 +1,5 @@
-require("michel_ducartier.lazy")
 require("michel_ducartier.remap")
+require("michel_ducartier.lazy")
 require("michel_ducartier.lsp.qmlls")
 
 -- Initialize tab configuration
