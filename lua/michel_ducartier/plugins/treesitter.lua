@@ -1,5 +1,6 @@
 return {
-    'nvim-treesitter/nvim-treesitter', build = ":TSUpdate" ,
+    'nvim-treesitter/nvim-treesitter',
+    build = ":TSUpdate",
     config = function()
         require('nvim-treesitter.configs').setup {
             -- A list of parser names, or "all" (the listed parsers MUST always be installed)
@@ -18,6 +19,7 @@ return {
 
             highlight = {
                 enable = true,
+                disable = { "latex" },
 
                 -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
                 -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
