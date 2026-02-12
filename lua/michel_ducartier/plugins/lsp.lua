@@ -15,6 +15,8 @@ return {
     config = function()
         local cmp_lsp = require("cmp_nvim_lsp")
         local cmp = require("cmp")
+        local servers = { "lua_ls", "rust_analyzer", "pyright", "ts_ls" }
+        local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         local capabilities = vim.tbl_deep_extend(
             "force",
@@ -25,32 +27,30 @@ return {
         require("fidget").setup({})
         require("mason").setup()
         require("mason-lspconfig").setup {
-            ensure_installed = { "lua_ls", "rust_analyzer", "pyright", "ts_ls" },
-            handlers = {
-                -- The first entry (without a key) will be the default handler
-                -- and will be called for each installed server that doesn't have
-                -- a dedicated handler.
-                function(server_name) -- default handler (optional)
-                    require("lspconfig")[server_name].setup {
-                        capabilities = capabilities,
-                    }
-                end,
-
-                ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup {
-                        settings = {
-                            Lua = {
-                                diagnostics = {
-                                    globals = { "vim" }
-                                }
-                            }
-                        }
-                    }
-                end,
-
-            }
+            ensure_installed = servers,
+            automatic_enable = false,
         }
+
+        for _, server in ipairs(servers) do
+            vim.lsp.config(server, {
+                capabilities = capabilities,
+            })
+        end
+
+        vim.lsp.config("lua_ls", {
+            capabilities = capabilities,
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { "vim" }
+                    }
+                }
+            }
+        })
+
+        for _, server in ipairs(servers) do
+            vim.lsp.enable(server)
+        end
 
         cmp.setup({
             snippet = {
