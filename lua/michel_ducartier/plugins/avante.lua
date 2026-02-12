@@ -14,7 +14,8 @@ return {
         -- this file can contain specific instructions for your project
         instructions_file = "avante.md",
         -- for example
-        provider = "local_llm",
+        -- provider = "local_llm",
+        provider = "claude",
         providers = {
             claude = {
                 endpoint = "https://api.anthropic.com",
@@ -34,13 +35,23 @@ return {
                     max_tokens = 32768,
                 },
             },
-            local_llm = {
-                __inherited_from = "openai",
-                endpoint = "http://127.0.0.1:8080/v1",
-                -- model = "Qwen2.5-Coder-1.5B-Q8_0-GGUF",
-                model = "Qwen3-1.7B-GGUF",
-                api_key_name = ""
-            }
+            -- local_llm = {
+            --     __inherited_from = "openai",
+            --     endpoint = "http://127.0.0.1:8080/v1",
+            --     -- model = "Qwen2.5-Coder-1.5B-Q8_0-GGUF",
+            --     model = "Qwen3-1.7B-GGUF",
+            --     api_key_name = ""
+            -- }
+        },
+    },
+    acp_providers = {
+        ["codex"] = {
+            command = "npx",
+            args = { "@zed-industries/codex-acp" },
+            env = {
+                NODE_NO_WARNINGS = "1",
+                OPENAI_API_KEY = os.getenv("OPENAI_API_KEY"),
+            },
         },
     },
     dependencies = {
