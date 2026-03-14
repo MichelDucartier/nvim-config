@@ -15,7 +15,7 @@ return {
     config = function()
         local cmp_lsp = require("cmp_nvim_lsp")
         local cmp = require("cmp")
-        local servers = { "lua_ls", "rust_analyzer", "pyright", "ts_ls" }
+        local servers = { "lua_ls", "rust_analyzer", "pyright", "ts_ls", "gopls" }
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         local capabilities = vim.tbl_deep_extend(

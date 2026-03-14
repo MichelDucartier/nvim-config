@@ -21,8 +21,7 @@ return {
                     -- post-launch.
                     model = 'PLACEHOLDER',
                     optional = {
-                        max_tokens = 128,
-                        top_p = 0.9,
+                        max_tokens = 256,
                     },
                     -- Llama.cpp does not support the `suffix` option in FIM completion.
                     -- Therefore, we must disable it and manually populate the special
@@ -55,6 +54,9 @@ return {
                 },
             },
         }
+        vim.keymap.set("n", "tc", function()
+            vim.cmd("Minuet virtualtext toggle")
+        end, { desc = "Toggle Minuet" })
     end,
     requires = {
         { 'nvim-lua/plenary.nvim' },
